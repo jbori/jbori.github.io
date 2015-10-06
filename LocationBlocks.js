@@ -76,6 +76,11 @@
 			  temperature = xhttp.responseText;
 			  callback(temperature);
 		   }
+		   else {
+			   // For testing purposes, return as well
+			  temperature = xhttp.responseText;
+			  callback(temperature);			   
+		   }
 		}
 		xhttp.send(postdata);
 		
