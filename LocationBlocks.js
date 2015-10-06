@@ -71,10 +71,11 @@
 		xhttp.setRequestHeader("Connection", "close");
 
 		xhttp.onreadystatechange = function() {//Call a function when the state changes.
-		   if(xhttp.readyState == 4 && xhttp.status == 200) {
+		   //if(xhttp.readyState == 4 && xhttp.status == 200) {
+		   if (xhttp.readyState == 4) {
 			  //alert(xhttp.responseText);
 			  //temperature = xhttp.responseText;
-			  temperature = "readyState=4 & status=200";
+			  temperature = "ok";
 			  callback(temperature);
 		   }
 		   else {
