@@ -90,11 +90,13 @@
 		
 		// Make an AJAX call to location services
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              //url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+			  url: 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitudre',
               dataType: 'jsonp',
-              success: function( weather_data ) {
+              success: function( location_data ) {
                   // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['temp'];
+                  //temperature = location_data['main']['temp'];
+				  temperature = location_data;
                   callback(temperature);
               }
         });
