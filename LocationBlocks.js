@@ -67,9 +67,9 @@
     var descriptor = {
         blocks: [
             ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
-			['R', 'latitude of %s', 'get_latitude', 'Boston, MA'],
-			['R', 'longitude of %s', 'get_longitude', 'Boston, MA'],
-			['R', 'altitude of %s', 'get_altitude', 'Boston, MA'],
+			['R', '%s's latitude', 'get_latitude', 'Boston, MA'],
+			['R', '%s's longitude', 'get_longitude', 'Boston, MA'],
+			['R', '%s's altitude', 'get_altitude', 'Boston, MA'],
         ]
     };
 
