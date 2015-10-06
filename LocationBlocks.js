@@ -57,8 +57,27 @@
 		//temperature = xhttp.responseText;
         //callback(temperature);
 		
-		temperature = post('http://108.167.143.127/inventiveproject/locationserver.php', {name: 'service getlocationdata'});
-		callback(temperature);
+		//temperature = post('http://108.167.143.127/inventiveproject/locationserver.php', {name: 'service getlocationdata'});
+		//callback(temperature);
+		
+		var http = new XMLHttpRequest();
+		var postdata= "service=getlocationdata&username=Marc&field=latitude";
+
+		http.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.setRequestHeader("Content-length", postdata.length);
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+		   if(http.readyState == 4 && http.status == 200) {
+			  alert(http.responseText);
+		   }
+		}
+		http.send(postdata);
+		temperature = http.responseText;
+        callback(temperature);
+		
 		
 		// Make an AJAX call to location services
         /*$.ajax({
