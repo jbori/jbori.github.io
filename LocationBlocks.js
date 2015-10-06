@@ -24,7 +24,7 @@
     ext.get_latitude = function(location, callback) {
         // Try javascript call to Location Services
 		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "ajax_info.txt", false);
+		xhttp.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial', false);
 		xhttp.send();
 		//document.getElementById("demo").innerHTML = xhttp.responseText;
 		temperature = xhttp.responseText;
