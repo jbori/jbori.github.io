@@ -30,7 +30,7 @@
 
     // Register the extension
     ScratchExtensions.register('Location Services extension', descriptor, ext);
-})({});
+})
 
 (function(ext) {
     // Cleanup function when the extension is unloaded
@@ -64,4 +64,8 @@
 
     // Register the extension
     ScratchExtensions.register('Latitude extension', descriptor, ext);
-})({});
+})
+
+
+({});
+
