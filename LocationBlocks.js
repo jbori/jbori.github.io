@@ -22,7 +22,7 @@
     };
 
     ext.get_latitude = function(location, callback) {
-        // Make an AJAX call to the Open Weather Maps API
+        // Make an AJAX call to location services
         $.ajax({
               url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
               dataType: 'jsonp',
