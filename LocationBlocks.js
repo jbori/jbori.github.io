@@ -21,27 +21,6 @@
         });
     };
 
-    // Block and block menu descriptions
-    var descriptor = {
-        blocks: [
-            ['R', 'test current temperature in city %s', 'get_temp', 'Boston, MA'],
-        ]
-    };
-
-    // Register the extension
-    ScratchExtensions.register('Location Services extension', descriptor, ext);
-})
-
-(function(ext) {
-    // Cleanup function when the extension is unloaded
-    ext._shutdown = function() {};
-
-    // Status reporting code
-    // Use this to report missing hardware, plugin or unsupported browser
-    ext._getStatus = function() {
-        return {status: 2, msg: 'Ready'};
-    };
-
     ext.get_latitude = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
@@ -54,18 +33,17 @@
               }
         });
     };
-
+	
+	
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'latitude of %s', 'get_latitude', 'Boston, MA'],
+            ['R', 'test current temperature in city %s', 'get_temp', 'Boston, MA'],
+			['R', 'latitude of %s', 'get_latitude', 'Boston, MA'],
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('Latitude extension', descriptor, ext);
-})
-
-
-({});
+    ScratchExtensions.register('Location Services extension', descriptor, ext);
+})({});
 
