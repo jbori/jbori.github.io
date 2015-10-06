@@ -35,11 +35,41 @@
     };
 	
 	
+    ext.get_longitude = function(location, callback) {
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
+    };
+	
+	
+    ext.get_altitude = function(location, callback) {
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
+    };
+	
+	
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'test current temperature in city %s', 'get_temp', 'Boston, MA'],
+            ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
 			['R', 'latitude of %s', 'get_latitude', 'Boston, MA'],
+			['R', 'longitude of %s', 'get_longitude', 'Boston, MA'],
+			['R', 'altitude of %s', 'get_altitude', 'Boston, MA'],
         ]
     };
 
