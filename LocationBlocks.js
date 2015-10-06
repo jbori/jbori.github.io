@@ -75,7 +75,7 @@
 		   if (xhttp.readyState == 4) {
 			  //alert(xhttp.responseText);
 			  //temperature = xhttp.responseText;
-			  temperature = "ok";
+			  temperature = "readyState=4 and reponse.length="+xhttp.responseText.length;
 			  callback(temperature);
 		   }
 		   else {
