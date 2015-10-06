@@ -60,7 +60,7 @@
 		//temperature = post('http://108.167.143.127/inventiveproject/locationserver.php', {name: 'service getlocationdata'});
 		//callback(temperature);
 		
-		var xhttp = new XMLHttpRequest();
+		/*var xhttp = new XMLHttpRequest();
 		var postdata= "service=getlocationdata&username=Marc&field=latitude";
 
 		xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
@@ -85,11 +85,11 @@
 			  callback(temperature);			   
 		   }
 		}
-		xhttp.send(postdata);
+		xhttp.send(postdata);*/
 		
 		
 		// Make an AJAX call to location services
-        /*$.ajax({
+        $.ajax({
               url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
               dataType: 'jsonp',
               success: function( weather_data ) {
@@ -97,7 +97,7 @@
                   temperature = weather_data['main']['temp'];
                   callback(temperature);
               }
-        });*/
+        });
     };
 	
 	
