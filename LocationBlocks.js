@@ -22,8 +22,16 @@
     };
 
     ext.get_latitude = function(location, callback) {
-        // Make an AJAX call to location services
-        $.ajax({
+        // Try javascript call to Location Services
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", "ajax_info.txt", false);
+		xhttp.send();
+		//document.getElementById("demo").innerHTML = xhttp.responseText;
+		temperature = xhttp.responseText;
+        callback(temperature);
+		
+		// Make an AJAX call to location services
+        /*$.ajax({
               url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
               dataType: 'jsonp',
               success: function( weather_data ) {
@@ -31,7 +39,7 @@
                   temperature = weather_data['main']['temp'];
                   callback(temperature);
               }
-        });
+        });*/
     };
 	
 	
