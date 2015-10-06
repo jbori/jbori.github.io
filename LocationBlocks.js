@@ -25,7 +25,7 @@
         // Try javascript call to Location Services
 		var xhttp = new XMLHttpRequest();
 		//xhttp.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial', false);
-		xhttp.open("POST", 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitude', false);
+		xhttp.open("GET", 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitude', false);
 		xhttp.send();
 		//document.getElementById("demo").innerHTML = xhttp.responseText;
 		temperature = xhttp.responseText;
