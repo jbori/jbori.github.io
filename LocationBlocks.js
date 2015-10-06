@@ -80,7 +80,7 @@
 		   else {
 			   // For testing purposes, return as well
 			  //temperature = xhttp.responseText;
-			  temperature = "error";
+			  temperature = "error (readyState="+xhttp.readyState+", status="+xhttp.status+")";
 			  callback(temperature);			   
 		   }
 		}
