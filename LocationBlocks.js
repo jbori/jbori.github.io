@@ -29,5 +29,5 @@
     };
 
     // Register the extension
-    ScratchExtensions.register('Weather extension', descriptor, ext);
+    ScratchExtensions.register('Location Services extension', descriptor, ext);
 })({});
