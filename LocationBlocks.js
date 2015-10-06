@@ -73,12 +73,14 @@
 		xhttp.onreadystatechange = function() {//Call a function when the state changes.
 		   if(xhttp.readyState == 4 && xhttp.status == 200) {
 			  //alert(xhttp.responseText);
-			  temperature = xhttp.responseText;
+			  //temperature = xhttp.responseText;
+			  temperature = "readyState=4 & status=200";
 			  callback(temperature);
 		   }
 		   else {
 			   // For testing purposes, return as well
-			  temperature = xhttp.responseText;
+			  //temperature = xhttp.responseText;
+			  temperature = "error";
 			  callback(temperature);			   
 		   }
 		}
