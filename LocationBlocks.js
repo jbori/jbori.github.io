@@ -64,7 +64,8 @@
 		var postdata= "service=getlocationdata&username=Marc&field=latitude";
 
 		//xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
-		xhttp.open("POST", "http://www.finalavsecurity.com/inventiveproject/pingservice.php", true);
+		//xhttp.open("POST", "http://www.finalavsecurity.com/inventiveproject/pingservice.php", true); // Works!
+		xhttp.open("POST", "http://108.167.143.127/inventiveproject/pingservice.php", true);
 
 		//Send the proper header information along with the request
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
