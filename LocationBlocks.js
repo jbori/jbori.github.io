@@ -65,7 +65,7 @@
 
 		//xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
 		//xhttp.open("POST", "http://www.finalavsecurity.com/inventiveproject/pingservice.php", true); // Works!
-		xhttp.open("POST", "http://108.167.143.127/inventiveproject/pingservice.php", true);
+		xhttp.open("POST", "http://108.167.143.127/inventiveproject/pingservice.php", true); // Works
 
 		//Send the proper header information along with the request
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -73,8 +73,8 @@
 		xhttp.setRequestHeader("Connection", "close");
 
 		xhttp.onreadystatechange = function() {//Call a function when the state changes.
-		   //if(xhttp.readyState == 4 && xhttp.status == 200) {
-		   if (xhttp.readyState == 4) {
+		   if(xhttp.readyState == 4 && xhttp.status == 200) {
+		   //if (xhttp.readyState == 4) {
 			  //alert(xhttp.responseText);
 			  //temperature = xhttp.responseText;
 			  //temperature = "readyState=4 and reponse.length="+xhttp.responseText.length;
