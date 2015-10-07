@@ -23,7 +23,7 @@
 
 	// Ancillary function to post requests to Location Server
 	// Source: http://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
-	function post(path, params, method) {
+	/*function post(path, params, method) {
 		method = method || "post"; // Set method to post by default if not specified.
 
 		// The rest of this code assumes you are not using a library.
@@ -45,28 +45,15 @@
 
 		document.body.appendChild(form);
 		form.submit();
-	}	
+	}*/	
 	
-    ext.get_latitude = function(location, callback) {
-        // Try javascript call to Location Services
-		//var xhttp = new XMLHttpRequest();
-		//xhttp.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial', false);
-		//xhttp.open("GET", 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitude', false);
-		//xhttp.send();
-		//document.getElementById("demo").innerHTML = xhttp.responseText;
-		//temperature = xhttp.responseText;
-        //callback(temperature);
-		
-		//temperature = post('http://108.167.143.127/inventiveproject/locationserver.php', {name: 'service getlocationdata'});
-		//callback(temperature);
-		
+    ext.get_latitude = function(username, callback) {
+		// Obtain location data for username from Location Services Broker
 		var xhttp = new XMLHttpRequest();
 		//var postdata= "service=getlocationdata&username=Marc&field=latitude";
 		var postdata= "service=getlocationdata&username="+username;
 
-		//xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
-		//xhttp.open("POST", "http://www.finalavsecurity.com/inventiveproject/pingservice.php", true); // Works!
-		//xhttp.open("POST", "http://108.167.143.127/inventiveproject/pingservice.php", true); // Works
+		// Open HTTP request
 		xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
 
 		//Send the proper header information along with the request
@@ -76,47 +63,11 @@
 
 		xhttp.onreadystatechange = function() {//Call a function when the state changes.
 		   if(xhttp.readyState == 4 && xhttp.status == 200) {
-		   //if (xhttp.readyState == 4) {
-			  //alert(xhttp.responseText);
-			  //temperature = xhttp.responseText;
-			  //temperature = "readyState=4 and reponse.length="+xhttp.responseText.length;
-			  //temperature = "readyState="+xhttp.readyState+", status="+xhttp.status+". reponse.length="+xhttp.responseText.length+" and response content="+xhttp.responseText; // Works
-			  //temperature = xhttp.responseText['latitude'];
 			  var location_data = JSON.parse(xhttp.responseText);
-			  //callback(temperature);
 			  callback(location_data.latitude);
 		   }
-		   /*else {
-			   // For testing purposes, return as well
-			  //temperature = xhttp.responseText;
-			  temperature = "error (readyState="+xhttp.readyState+", status="+xhttp.status+", responseText="+xhttp.responseText+")";
-			  callback(temperature);			   
-		   }*/
 		}
-		xhttp.send(postdata);
-		
-		
-		// Make an AJAX call to location services
-        /*$.ajax({
-              //url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial', // works
-			  //url: 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitudre',
-			  //url: 'http://108.167.143.127/inventiveproject/pingservice.php',
-			  url: 'http://www.finalavsecurity.com/inventiveproject/pingservice.php',
-              //contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
-			  //dataType: 'html',  // works with weather service 
-			  //dataType: 'text', // gets stuck
-              dataType: 'jsonp', // works with weather service 
-			  //url: 'http://108.167.143.127/inventiveproject/locationserver.php',
-              //data: 'service=getlocationdata&username=Marc&field=latitudre';
-              success: function( location_data ) {
-                  // Got the data - parse it and return the temperature
-                  //temperature = location_data['main']['temp'];
-				  temperature = "test";
-				  //temperature = location_data;				  
-				  //temperature = location_data;
-                  callback(temperature);
-              }
-        });*/
+		xhttp.send(postdata);	
     };
 	
 	
