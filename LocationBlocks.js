@@ -79,7 +79,8 @@
 			  //alert(xhttp.responseText);
 			  //temperature = xhttp.responseText;
 			  //temperature = "readyState=4 and reponse.length="+xhttp.responseText.length;
-			  temperature = "readyState="+xhttp.readyState+", status="+xhttp.status+". reponse.length="+xhttp.responseText.length+" and response content="+xhttp.responseText;
+			  //temperature = "readyState="+xhttp.readyState+", status="+xhttp.status+". reponse.length="+xhttp.responseText.length+" and response content="+xhttp.responseText; // Works
+			  temperature = xhttp.responseText['latitude'];
 			  callback(temperature);
 		   }
 		   /*else {
