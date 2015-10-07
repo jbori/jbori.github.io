@@ -80,8 +80,10 @@
 			  //temperature = xhttp.responseText;
 			  //temperature = "readyState=4 and reponse.length="+xhttp.responseText.length;
 			  //temperature = "readyState="+xhttp.readyState+", status="+xhttp.status+". reponse.length="+xhttp.responseText.length+" and response content="+xhttp.responseText; // Works
-			  temperature = xhttp.responseText['latitude'];
-			  callback(temperature);
+			  //temperature = xhttp.responseText['latitude'];
+			  var location_data = JSON.parse(xhttp.responseText);
+			  //callback(temperature);
+			  callback(location_data.latitude);
 		   }
 		   /*else {
 			   // For testing purposes, return as well
