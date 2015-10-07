@@ -119,11 +119,13 @@
     };
 	
 	
-    ext.get_longitude = function(location, callback) {
-		// Obtain location data from Location Services Broker
+    ext.get_longitude = function(username, callback) {
+		// Obtain location data for username from Location Services Broker
 		var xhttp = new XMLHttpRequest();
-		var postdata= "service=getlocationdata&username=Marc&field=latitude";
+		//var postdata= "service=getlocationdata&username=Marc&field=latitude";
+		var postdata= "service=getlocationdata&username="+username;
 
+		// Open HTTP request
 		xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
 
 		//Send the proper header information along with the request
