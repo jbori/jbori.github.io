@@ -96,7 +96,7 @@
 		
 		
 		// Make an AJAX call to location services
-        /*$.ajax({
+        $.ajax({
               //url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial', // works
 			  //url: 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitudre',
 			  //url: 'http://108.167.143.127/inventiveproject/pingservice.php',
@@ -115,29 +115,21 @@
 				  //temperature = location_data;
                   callback(temperature);
               }
-        });*/
+        });
     };
 	
 	
     ext.get_longitude = function(location, callback) {
-		// Obtain location data from Location Services Broker
-		var xhttp = new XMLHttpRequest();
-		var postdata= "service=getlocationdata&username=Marc&field=latitude";
-
-		xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
-
-		//Send the proper header information along with the request
-		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.setRequestHeader("Content-length", postdata.length);
-		xhttp.setRequestHeader("Connection", "close");
-
-		xhttp.onreadystatechange = function() {//Call a function when the state changes.
-		   if(xhttp.readyState == 4 && xhttp.status == 200) {
-			  var location_data = JSON.parse(xhttp.responseText);
-			  callback(location_data.longitude);
-		   }
-		}
-		xhttp.send(postdata);	
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
     };
 	
 	
