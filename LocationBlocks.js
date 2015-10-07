@@ -101,7 +101,8 @@
               success: function( location_data ) {
                   // Got the data - parse it and return the temperature
                   //temperature = location_data['main']['temp'];
-				  temperature = "test"
+				  temperature = "test";
+				  temperature = location_data;				  
 				  //temperature = location_data;
                   callback(temperature);
               }
