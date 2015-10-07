@@ -60,10 +60,11 @@
 		//temperature = post('http://108.167.143.127/inventiveproject/locationserver.php', {name: 'service getlocationdata'});
 		//callback(temperature);
 		
-		/*var xhttp = new XMLHttpRequest();
+		var xhttp = new XMLHttpRequest();
 		var postdata= "service=getlocationdata&username=Marc&field=latitude";
 
-		xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
+		//xhttp.open("POST", "http://108.167.143.127/inventiveproject/locationserver.php", true);
+		xhttp.open("POST", "http://www.finalavsecurity.com/inventiveproject/pingservice.php", true);
 
 		//Send the proper header information along with the request
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -85,7 +86,7 @@
 			  callback(temperature);			   
 		   }
 		}
-		xhttp.send(postdata);*/
+		xhttp.send(postdata);
 		
 		
 		// Make an AJAX call to location services
