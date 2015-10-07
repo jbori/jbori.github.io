@@ -93,8 +93,9 @@
               url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
 			  //url: 'http://108.167.143.127/inventiveproject/locationserver.php?service=getlocationdata&username=Marc&field=latitudre',
               //contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
-			  dataType: 'text',
-              //dataType: 'jsonp',			  
+			  dataType: 'html', 
+			  //dataType: 'text', // gets stuck
+              //dataType: 'jsonp', // works with weather service 
 			  //url: 'http://108.167.143.127/inventiveproject/locationserver.php',
               //data: 'service=getlocationdata&username=Marc&field=latitudre';
               success: function( location_data ) {
