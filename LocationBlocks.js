@@ -123,7 +123,7 @@
 			['R', '%s s latitude', 'get_latitude', 'Marc'],
 			['R', '%s s longitude', 'get_longitude', 'Marc'],
 			['R', '%s s altitude', 'get_altitude', 'Marc'],
-			['R', '%s s altitude', 'get_altitude', 'Marc'],
+			['R', '%s s accuracy', 'get_accuracy', 'Marc'],
         ]
     };
 
