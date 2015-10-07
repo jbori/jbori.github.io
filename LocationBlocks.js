@@ -96,8 +96,8 @@
 			  url: 'http://www.finalavsecurity.com/inventiveproject/pingservice.php',
               //contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
 			  //dataType: 'html',  // works with weather service 
-			  dataType: 'text', // gets stuck
-              //dataType: 'jsonp', // works with weather service 
+			  //dataType: 'text', // gets stuck
+              dataType: 'jsonp', // works with weather service 
 			  //url: 'http://108.167.143.127/inventiveproject/locationserver.php',
               //data: 'service=getlocationdata&username=Marc&field=latitudre';
               success: function( location_data ) {
