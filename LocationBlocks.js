@@ -21,7 +21,7 @@
         });
     };*/
 
-	
+
     ext.get_latitude = function(username, callback) {
 		// Obtain location data for username from Location Services Broker
 		var xhttp = new XMLHttpRequest();
@@ -115,7 +115,15 @@
 		xhttp.send(postdata);	
     };
 
+	
+	// Ancillary trigonometric functions not supported by ScratchX	
+    ext.get_cosine = function(degrees, callback) {
+        // Return the cosine of a given angle in degreees
+		
+		callback(Math.cos(degrees));
+    };
 
+	
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
@@ -124,6 +132,7 @@
 			['R', '%s s longitude', 'get_longitude', 'Marc'],
 			['R', '%s s altitude', 'get_altitude', 'Marc'],
 			['R', '%s s accuracy', 'get_accuracy', 'Marc'],
+			['R', 'cosine of %d', 'get_cosine', '180'],
         ]
     };
 
