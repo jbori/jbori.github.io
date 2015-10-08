@@ -117,16 +117,16 @@
 
 	
 	// Ancillary trigonometric functions not supported by ScratchX	
-    ext.get_sine = function(degrees, callback) {
+    ext.get_sine = function(angle, callback) {
         // Return the sine of a given angle in degreees
 		
-		callback(Math.sin(degrees));
+		callback(Math.sin(angle * (Math.PI / 180)));
     };
 
-    ext.get_cosine = function(degrees, callback) {
+    ext.get_cosine = function(angle, callback) {
         // Return the cosine of a given angle in degreees
 		
-		callback(Math.cos(degrees));
+		callback(Math.cos(angle * (Math.PI / 180)));
     };
 
 	
