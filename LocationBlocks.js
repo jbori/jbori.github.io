@@ -117,6 +117,12 @@
 
 	
 	// Ancillary trigonometric functions not supported by ScratchX	
+    ext.get_sine = function(degrees, callback) {
+        // Return the sine of a given angle in degreees
+		
+		callback(Math.sin(degrees));
+    };
+
     ext.get_cosine = function(degrees, callback) {
         // Return the cosine of a given angle in degreees
 		
@@ -132,7 +138,8 @@
 			['R', '%s s longitude', 'get_longitude', 'Marc'],
 			['R', '%s s altitude', 'get_altitude', 'Marc'],
 			['R', '%s s accuracy', 'get_accuracy', 'Marc'],
-			['R', 'cosine of %d', 'get_cosine', '180'],
+			['R', 'sine of %d', 'get_sine', '0'],
+			['R', 'cosine of %d', 'get_cosine', '0'],
         ]
     };
 
